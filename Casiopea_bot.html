@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casiopea World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Casiopea World</h1>
+    <input type="text" id="keywordInput" placeholder="Ingrese una palabra clave">
+    <button onclick="buscarRespuesta()">Enviar</button>
+    <div id="respuestaContainer"></div>
+
+    <script>
+        // Definir respuestas en función de palabras clave
+        const respuestas = {
+            "peticiones": "¿Qué quiere hacer?",
+            "crear nueva resonancia": "¿De qué?",
+            "resonancia abdomen y pelvis": "¿Motivo clínico?",
+            "resonancia pelvis y abdomen": "¿Motivo clínico?",
+            "resonancia": "¡Vaya! Tienes que ser algo más específico",
+            "dolor menstrual": "RM pelvis: 1) quiste de aspecto endometriósico en ovario izquierdo de unos 4 cm. Placas fibróticas sugestivas de endometriosis en fondo de saco posterior, traccionando el sigma que se encuentra pegado a la cara posterior del útero. 2) útero doble con obstrucción vaginal incompleta. Hematocolpos y hematosalpinx izquierdo. 3) nódulo adenomiósico intramural fúndico de aproximadamente 3 cm. - Entero RM de abdomen: 1) placas de aspecto endometriosicas a nível del ciego, apéndice e íleo terminal. 2) agenesia renal izquierda. ¡Es la hora! Debes ir a darle el diagnóstico a la paciente. Lleva mucho rato esperándoos. Ir a buscarla y no os olvidéis de llevar el informe completo. Vuelve a mi cuando te faltan las palabras, te esperaré...",
+            "tiempo": "El tiempo está soleado hoy.",
+            "tiempo": "El tiempo está soleado hoy.",
+            "tiempo": "El tiempo está soleado hoy.",
+            "tiempo": "El tiempo está soleado hoy.",
+            // Puedes añadir más palabras clave y respuestas aquí
+        };
+
+        function buscarRespuesta() {
+            const keywordInput = document.getElementById("keywordInput");
+            const keyword = keywordInput.value.trim().toLowerCase();
+            const respuestaContainer = document.getElementById("respuestaContainer");
+            respuestaContainer.innerHTML = "";
+
+            if (respuestas[keyword]) {
+                respuestaContainer.innerHTML = respuestas[keyword];
+            } else {
+                respuestaContainer.innerHTML = "Lo siento, no tengo una respuesta para esa cuestión";
+            }
+        }
+    </script>
+</body>
+</html>
